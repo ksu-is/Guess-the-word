@@ -1,13 +1,15 @@
 import random
 
-words = ["python", "strings", "integers", "indexes", ]
+words = ["python", "strings", "integers", "indexes","program","list","floats","arrays","loops","statement","variable",
+"method","define","boolean","object","print","data","function","while","return","input","operator","elif","slicing","append","condition"]
+
 words = random.choice(words) #picks random word from the list
-print(words) #REMEMBER TO DELETE AFTER COMPLETION
+
 print("Guess the characters, Good luck!")
 
 
 guesses = " " #Empty string 
-tries = 12
+tries = 10 #number of tries
 
 while tries > 0:   #while loop begins
     wrong_guess = 0
@@ -18,16 +20,25 @@ while tries > 0:   #while loop begins
             if char not in guesses:
                 print("_",end= " ") 
                 wrong_guess +=1
+    
     if wrong_guess == 0:
         print("you win!")
         print("the word is:" , words)
         break
-    guess = input("guess a character: ")
-    guesses += guess
-    if guess.lower().startswith("q"): #User wants to quit
+    guess = input("guess a character or type 'quit' to end the game: ")
+    
+    if guess.isalpha():
+        guess = guess.lower() #forces the letter to be lower case
+        guesses += guess
+    else:
+        print("Error: Please only input letters")
+        guess = input("guess a character or type 'quit' to end the game: ")
+        
+    if guess.lower() == "quit": #User wants to quit
         print("You chose to quit")
         print("The word was:", words)
         break
+    
     if guess not in words:
         tries -= 1
         print("Wrong, you have",tries, "more guesses" )
@@ -35,4 +46,3 @@ while tries > 0:   #while loop begins
             print("you lose")
     
 
-#add lower (methods)/ Force input into lowercase
