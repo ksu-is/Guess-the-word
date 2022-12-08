@@ -5,7 +5,7 @@ words = ["python", "strings", "integers", "indexes","program","list","floats","a
 
 words = random.choice(words) #picks random word from the list
 
-print("Guess the characters, Good luck!")
+print("Try figuring out the word by guessing the characters, You got this!")
 
 
 guesses = " " #Empty string 
@@ -45,4 +45,6 @@ while tries > 0:   #while loop begins
         print("Wrong, you have",tries, "more guesses" )
         if tries == 0:
             print("you lose, the word was...",words + "!")
+    
+
 
