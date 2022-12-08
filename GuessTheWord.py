@@ -45,20 +45,4 @@ while tries > 0:   #while loop begins
         print("Wrong, you have",tries, "more guesses" )
         if tries == 0:
             print("you lose, the word was...",words + "!")
-    
-
-
-
-        
-    if guess.lower() == "quit": #User wants to quit
-        print("You chose to quit")
-        print("The word was:", words)
-        break
-    
-    if guess not in words:
-        tries -= 1
-        print("Wrong, you have",tries, "more guesses" )
-        if tries == 0:
-            print("you lose")
-    
 
